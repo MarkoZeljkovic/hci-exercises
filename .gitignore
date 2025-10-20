@@ -1,0 +1,19 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.db
+*.opendb
+*.log
+*.cache
+*.tlog
+
+# Build folderi
+bin/
+obj/
+TestResults/
+Generated Files/
+
+# Paket menadžeri
+*.nuget/
+packages/
