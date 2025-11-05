@@ -1,6 +1,7 @@
 ﻿using _03_DataBinding_ObservableCollection.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,19 +21,18 @@ namespace _03_DataBinding_ObservableCollection
     /// </summary>
     public partial class BooksWindow : Window
     {
-
-        public List<Book> Books { get; set; } // ❌ List, not ObservableCollection
+        public ObservableCollection<Book> Books { get; set; } // ✅ Observable!
 
         public BooksWindow()
         {
             InitializeComponent();
 
-            Books = new List<Book>
-            {
-                new Book { Title = "1984", Author = "George Orwell", Year = 1949, IsRead = false },
-                new Book { Title = "Brave New World", Author = "Aldous Huxley", Year = 1932, IsRead = true },
-                new Book { Title = "Fahrenheit 451", Author = "Ray Bradbury", Year = 1953, IsRead = false }
-            };
+            Books = new ObservableCollection<Book>
+        {
+            new Book { Title = "1984", Author = "George Orwell", Year = 1949, IsRead = false },
+            new Book { Title = "Brave New World", Author = "Aldous Huxley", Year = 1932, IsRead = true },
+            new Book { Title = "Fahrenheit 451", Author = "Ray Bradbury", Year = 1953, IsRead = false }
+        };
 
             this.DataContext = this;
         }
@@ -41,14 +41,14 @@ namespace _03_DataBinding_ObservableCollection
         {
             var newBook = new Book
             {
-                Title = "New Book",
+                Title = $"Book #{Books.Count + 1}",
                 Author = "Unknown",
                 Year = 2024,
                 IsRead = false
             };
 
             Books.Add(newBook);
-            // Problem: ListBox se NE ažurira! ❌
+            // UI se automatski ažurira! ✅
         }
     }
 }
