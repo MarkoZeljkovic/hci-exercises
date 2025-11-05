@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniLightsOut", "..\..\..\D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_DataBinding_ObservableCollection", "03_DataBinding_ObservableCollection\03_DataBinding_ObservableCollection.csproj", "{578D1FA4-5067-472B-BBB3-0F44C07A36DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{A040B63F-F473-4478-B4EA-6747AA3FA6F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A040B63F-F473-4478-B4EA-6747AA3FA6F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A040B63F-F473-4478-B4EA-6747AA3FA6F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{578D1FA4-5067-472B-BBB3-0F44C07A36DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{578D1FA4-5067-472B-BBB3-0F44C07A36DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{578D1FA4-5067-472B-BBB3-0F44C07A36DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{578D1FA4-5067-472B-BBB3-0F44C07A36DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
