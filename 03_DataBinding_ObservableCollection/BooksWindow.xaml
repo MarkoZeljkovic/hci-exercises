@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:_03_DataBinding_ObservableCollection"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:_03_DataBinding_ObservableCollection.Models"
     Title="BooksWindow"
     Width="800"
     Height="450"
@@ -13,17 +14,43 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <!--  NOVO: Row za selected info  -->
         </Grid.RowDefinitions>
         <ListBox
             Grid.Row="0"
             Margin="0,0,0,10"
             DisplayMemberPath="Title"
-            ItemsSource="{Binding Books}" />
-        <Button
+            ItemsSource="{Binding Books}"
+            SelectedItem="{Binding SelectedBook, Mode=TwoWay}" />
+        <StackPanel
             Grid.Row="1"
-            Width="120"
-            HorizontalAlignment="Left"
-            Click="AddBook_Click"
-            Content="Add New Book" />
+            Margin="0,0,0,10"
+            Orientation="Horizontal">
+            <Button
+                Width="100"
+                Margin="0,0,10,0"
+                Click="AddBook_Click"
+                Content="Add Book" />
+        </StackPanel>
+        <!--  NOVO: selected info  -->
+        <StackPanel Grid.Row="2" Margin="0,10,0,0">
+            <TextBlock
+                FontSize="14"
+                FontWeight="Bold"
+                Text="Selected Book:" />
+            <TextBlock Margin="0,5,0,0">
+                <Run Text="Title: " />
+                <Run FontWeight="Bold" Text="{Binding SelectedBook.Title, Mode=OneWay}" />
+            </TextBlock>
+            <TextBlock Margin="0,2,0,0">
+                <Run Text="Author: " />
+                <Run Text="{Binding SelectedBook.Author, Mode=OneWay}" />
+            </TextBlock>
+            <TextBlock Margin="0,2,0,0">
+                <Run Text="Year: " />
+                <Run Text="{Binding SelectedBook.Year, Mode=OneWay}" />
+            </TextBlock>
+        </StackPanel>
     </Grid>
 </Window>
